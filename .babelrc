@@ -4,7 +4,15 @@
             "@babel/preset-env",
             {
                 "useBuiltIns": "usage", // babel-polyfill按需引入
-                "corejs": 3
+                "corejs": 3,
+                // 指定兼容性做到哪个版本浏览器,减少babel转换工作量
+                "targets": {
+                    "chrome": 60,
+                    "firefox": 60,
+                    "ie": 9,
+                    "safari": 10,
+                    "edge": 17
+                }
             }
         ]
     ],
