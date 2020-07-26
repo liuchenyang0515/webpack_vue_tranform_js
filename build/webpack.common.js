@@ -17,8 +17,18 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|jpeg|gif)$/,
-                use: ['file-loader']
+                loader: 'url-loader',
+                options: {
+                    limit: 8 * 1024,
+                    esModule: false, // 解决图片解析时会出问题：[object Module]
+                    name: '[hash:10].[ext]'
+                }
             },
+            // { // vue-loader会处理好这个问题
+            //     test: /\.html$/,
+            //     // 处理html文件的img图片（负责引入img，从而能被url-loader进行处理）
+            //     use: ['html-loader']
+            // },
             {
                 test: /\.vue$/,
                 use: ['vue-loader']
@@ -28,6 +38,7 @@ module.exports = {
                 // loader 的执行顺序是：从后往前
                 use: ['style-loader', 'css-loader', 'postcss-loader'] // 加了 postcss
             },
+      
             // {
             //     test: /\.less$/,
             //     // 增加 'less-loader' ，注意顺序

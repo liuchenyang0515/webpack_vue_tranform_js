@@ -1,6 +1,7 @@
 <template>
     <div>
         <MyCom></MyCom>
+        <img src="../img/strawberry.jpeg">
     </div>
 </template>
 
