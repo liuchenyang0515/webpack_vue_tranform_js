@@ -2,14 +2,24 @@ import vue from 'vue'
 import vueRouter from 'vue-router'
 import Comp from './view/comp.vue'
 // =========== 测试babel语法转换
-let a = (a, b)=>{}
-new Promise((resolve)=>{
+let a = (a, b) => { }
+new Promise((resolve) => {
     setTimeout(() => {
         console.log(123123);
         resolve();
     }, 2000);
 });
 // ===========
-new vue({
-    render : h=>h(Comp)
-}).$mount('#app')
+let vm = new vue({
+    render: h => h(Comp)
+})
+//.$mount('#app')
+window.My_Methods = {
+    init() {
+        if (window.myComp == undefined) {
+            window.myComp = vm.$mount("#app");
+        }
+        console.log(vm.$children);
+        vm.$children[0].flag = true;
+    }
+}
