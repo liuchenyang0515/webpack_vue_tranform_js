@@ -12,13 +12,10 @@ new Promise((resolve) => {
 // ===========
 let vm = new vue({
     render: h => h(Comp)
-})
-//.$mount('#app')
+}).$mount("#app")
+
 window.My_Methods = {
-    init() {
-        if (window.myComp == undefined) {
-            window.myComp = vm.$mount("#app");
-        }
+    displayImg() {
         console.log(vm.$children);
         vm.$children[0].flag = true;
     }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <MyCom></MyCom>
-    <img v-if="flag" src="../img/strawberry.jpeg" class="pic" @click="dark"/>
+    <img v-show="flag" src="../img/strawberry.jpeg" class="pic" @click="dark"/>
     <!-- 以上看起来没有意义的操作仅仅为了验证loader的有效性 -->
   </div>
 </template>
@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      flag: true
+      flag: false
     };
   },
   methods: {

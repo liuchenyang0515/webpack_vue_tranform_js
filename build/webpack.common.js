@@ -60,8 +60,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "../test.html"),
             filename: "test2.html",
-            inject: "head",
-            // inject默认true传递时，true或'body'所有JavaScript资源都将放置在body元素的底部。'head'会将脚本放置在head元素中(true || 'head' || 'body' || false)
+            inject: "true",
+            // inject默认true，传递true或'body'则所有JavaScript资源都将放置在body元素的底部。'head'会将脚本放置在head元素中(true || 'head' || 'body' || false)
             hash: true
             // 默认false，如果true，则将唯一的webpack编译哈希值附加到所有包含的脚本和CSS文件中。这对于清除缓存很有用
         })
